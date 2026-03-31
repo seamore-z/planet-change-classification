@@ -1,0 +1,22 @@
+#!/bin/bash -l
+
+
+# Specify project name 
+#$ -P modislc
+
+# Time limit for the job
+#$ -l h_rt=8:00:00
+
+# Give a job name
+#$ -N PCA_generation
+
+# Combine error and output strem into one
+#$ -j y
+
+# Send an email when the job is complete 
+#$ -m ea
+
+module load miniconda
+conda activate /projectnb/modislc/users/sjstone/GeoEnv2
+
+python thermokarst_pca.py 
